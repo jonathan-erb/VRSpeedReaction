@@ -1,0 +1,21 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# Visual Studio / Rider
+.vscode/
+*.csproj
+*.sln
+*.userprefs
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Unity generated assets
+sysinfo.txt

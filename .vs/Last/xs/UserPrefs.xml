@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{88FD9C8C-A6FD-839E-21D5-766969C16C2A}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ReactionGameManager.cs">
+    <Files>
+      <File FileName="Library/PackageCache/com.meta.xr.sdk.interaction/Runtime/Scripts/Interaction/Surfaces/NavMeshSurface.cs" />
+      <File FileName="Library/PackageCache/com.meta.xr.sdk.interaction/Runtime/Scripts/Interaction/Visuals/InteractableColorVisual.cs" />
+      <File FileName="Assets/ReactionGameManager.cs" Line="24" Column="6" />
+      <File FileName="Assets/ButtonInteractionHandler.cs" />
+      <File FileName="Library/PackageCache/com.meta.xr.sdk.interaction/Runtime/Scripts/Interaction/Models/Poke/PokeInteractable.cs" />
+      <File FileName="Library/PackageCache/com.meta.xr.sdk.interaction/Editor/Poke/PokeInteractableEditor.cs" />
+      <File FileName="Library/PackageCache/com.meta.xr.sdk.voice/Lib/Wit.ai/Lib/Wit/Runtime/Audio/BaseAudioClipStream.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Last" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Oculus" expanded="True" />
+              <Node name="ReactionGameManager.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bda9307e-0b46-4a5d-b414-e62bf1f01b8b" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
