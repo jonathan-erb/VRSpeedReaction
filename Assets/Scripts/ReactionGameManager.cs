@@ -163,7 +163,7 @@ public class ReactionGameManager : MonoBehaviour
     {
         isGameActive = false;
         // buzzer.PlayOneShot(buzzer.clip);
-        ScoreManager.SaveScore(score);
+        //ScoreManager.SaveScore(score);
         //startButton.gameObject.SetActive(true);
         gameOverText.text = $"GAME OVER\nScore: {score}";
         //gameOverText.gameObject.SetActive(true);

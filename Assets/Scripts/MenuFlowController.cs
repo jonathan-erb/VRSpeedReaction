@@ -52,6 +52,7 @@ public class MenuFlowController : MonoBehaviour
 
         var highs = ScoreManager.LoadHighScores();   // static helper
         var sb = new StringBuilder();
+        if (highs == null) { scoresText.text = " "; }
         foreach (var s in highs)
             sb.AppendLine($"• {s}");
         scoresText.text = sb.ToString();
@@ -69,6 +70,7 @@ public class MenuFlowController : MonoBehaviour
         mainOptions.SetActive(true);
         difficultyOptions.SetActive(false);
         scorePanel.SetActive(false);
+        scoreBack.SetActive(false);
     }
 
     void LaunchGame()
