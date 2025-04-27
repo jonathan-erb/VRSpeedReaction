@@ -20,3 +20,4 @@ Thumbs.db
 # Unity generated assets
 sysinfo.txt
 *.apk
+mono_crash.mem.*.blob
