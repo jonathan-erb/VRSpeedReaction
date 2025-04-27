@@ -167,7 +167,7 @@ public class ReactionGameManager : MonoBehaviour
         //startButton.gameObject.SetActive(true);
         gameOverText.text = $"GAME OVER\nScore: {score}";
         //gameOverText.gameObject.SetActive(true);
-
+        ScoreManager.SaveScore(score);
         //backButton.gameObject.SetActive(true);
         ResetGame();
         //Debug.Log("Game Over! Timer reached zero.");
