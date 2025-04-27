@@ -1,18 +1,20 @@
 using Oculus.Interaction;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ReactionGameManager : MonoBehaviour
 {
     public PokeInteractable[] buttons; 
-    public PokeInteractable startButton; 
+    public PokeInteractable startButton;
+    public PokeInteractable backButton;
     public TextMeshProUGUI scoreText;  
     public TextMeshProUGUI timerText;   
     public TextMeshProUGUI gameOverText;
     public int score = 0;             
 
     private float timer = 30f;
-    private PokeInteractable activeButton; 
+    private PokeInteractable activeButton;
     private bool isGameActive = false;   
     private bool isTimerRunning = false;
 
@@ -34,7 +36,10 @@ public class ReactionGameManager : MonoBehaviour
         {
             startInteractableView.WhenStateChanged += OnStartButtonPressed;
         }
-
+        if (backButton.TryGetComponent<IInteractableView>(out var backView))
+        {
+            backView.WhenStateChanged += OnBackButtonPressed;
+        }
         // Deactivate buttons initially (all buttons should be inactive to start with)
         foreach (var button in buttons)
         {
@@ -77,11 +82,20 @@ public class ReactionGameManager : MonoBehaviour
         {
             isGameActive = true; // Start the game
             startButton.gameObject.SetActive(false); // Disable the start button
+            //backButton.gameObject.SetActive(false);
             gameOverText.text = " ";
             timer = 30f;
             isTimerRunning = true;
 
             SetRandomActiveButton(); // Activate the first game button
+        }
+    }
+
+    private void OnBackButtonPressed(InteractableStateChangeArgs args)
+    {
+        if (args.NewState == InteractableState.Select)
+        {
+            SceneManager.LoadScene(0); // or use the build-index: LoadScene(0)
         }
     }
 
@@ -135,19 +149,35 @@ public class ReactionGameManager : MonoBehaviour
         }
     }
 
-    void GameOver()
+    void ResetGame()
     {
-        isGameActive = false;
-        // buzzer.PlayOneShot(buzzer.clip);
-        startButton.gameObject.SetActive(true); 
-        Debug.Log("Game Over! Timer reached zero.");
-        gameOverText.text = "GAME OVER\n Score: " + score;
+        startButton.gameObject.SetActive(true);
         score = 0;
         scoreText.text = "Score: ";
         foreach (var button in buttons)
         {
-            button.gameObject.SetActive(false); 
+            button.gameObject.SetActive(false);
         }
+    }
+    void GameOver()
+    {
+        isGameActive = false;
+        // buzzer.PlayOneShot(buzzer.clip);
+        ScoreManager.SaveScore(score);
+        //startButton.gameObject.SetActive(true);
+        gameOverText.text = $"GAME OVER\nScore: {score}";
+        //gameOverText.gameObject.SetActive(true);
+
+        //backButton.gameObject.SetActive(true);
+        ResetGame();
+        //Debug.Log("Game Over! Timer reached zero.");
+        //gameOverText.text = "GAME OVER\n Score: " + score;
+        //score = 0;
+        //scoreText.text = "Score: ";
+        //foreach (var button in buttons)
+        //{
+        //    button.gameObject.SetActive(false); 
+        //}
        
     }
 }
