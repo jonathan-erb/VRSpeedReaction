@@ -7,16 +7,13 @@ public static class ScoreManager
     private const string HighScoresKey = "HighScores";
     private const int MaxEntries = 10;
 
-    // JSON wrapper for Unity's JsonUtility
+
     [Serializable]
     private class IntArrayWrapper
     {
         public int[] scores = new int[0];
     }
 
-    /// <summary>
-    /// Loads the saved high‐scores list (sorted descending).
-    /// </summary>
     public static List<int> LoadHighScores()
     {
         // Create a valid default JSON object if nothing is saved yet
@@ -39,10 +36,7 @@ public static class ScoreManager
         return new List<int>(wrapper.scores);
     }
 
-    /// <summary>
-    /// Adds a new score to the list, keeps only the top <see cref="MaxEntries"/> entries,
-    /// and persists back to PlayerPrefs.
-    /// </summary>
+
     public static void SaveScore(int score)
     {
         if (score <= 0)

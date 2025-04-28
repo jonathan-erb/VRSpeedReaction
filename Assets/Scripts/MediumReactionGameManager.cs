@@ -172,9 +172,6 @@ public class MediumReactionGameManager : MonoBehaviour
         isGameActive = false;
         isTimerRunning = false;
 
-        // Clear any leftovers
-
-        // Show Game Over UI
         gameOverText.text = $"GAME OVER\nScore: {score}";
         //gameOverText.gameObject.SetActive(true);
         ScoreManager.SaveScore(score);

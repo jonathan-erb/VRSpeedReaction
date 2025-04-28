@@ -43,7 +43,7 @@ public class ReactionGameManager : MonoBehaviour
         // Deactivate buttons initially (all buttons should be inactive to start with)
         foreach (var button in buttons)
         {
-            button.gameObject.SetActive(false); // Set all buttons inactive at the start
+            button.gameObject.SetActive(false);
         }
 
         UpdateScoreText();
@@ -59,12 +59,12 @@ public class ReactionGameManager : MonoBehaviour
             // Stop the timer if it reaches 0
             if (timer <= 0f)
             {
-                timer = 0f; // Clamp the timer to 0
-                isTimerRunning = false; // Stop the timer
-                GameOver(); // Call your game-over logic
+                timer = 0f; 
+                isTimerRunning = false;
+                GameOver();
             }
 
-            UpdateTimerDisplay(timer); // Update the UI
+            UpdateTimerDisplay(timer);
         }
     }
 
@@ -80,14 +80,13 @@ public class ReactionGameManager : MonoBehaviour
     {
         if (args.NewState == InteractableState.Select && !isGameActive)
         {
-            isGameActive = true; // Start the game
-            startButton.gameObject.SetActive(false); // Disable the start button
-            //backButton.gameObject.SetActive(false);
+            isGameActive = true; 
+            startButton.gameObject.SetActive(false); 
             gameOverText.text = " ";
             timer = 30f;
             isTimerRunning = true;
 
-            SetRandomActiveButton(); // Activate the first game button
+            SetRandomActiveButton(); 
         }
     }
 
@@ -95,7 +94,7 @@ public class ReactionGameManager : MonoBehaviour
     {
         if (args.NewState == InteractableState.Select)
         {
-            SceneManager.LoadScene(0); // or use the build-index: LoadScene(0)
+            SceneManager.LoadScene(0); 
         }
     }
 
@@ -106,7 +105,7 @@ public class ReactionGameManager : MonoBehaviour
         // Deactivate the current active button
         if (activeButton != null)
         {
-            activeButton.gameObject.SetActive(false); // Disable the current button
+            activeButton.gameObject.SetActive(false); 
             // Unsubscribe from button interaction
             activeButton.GetComponent<IInteractableView>().WhenStateChanged -= OnGameButtonPressed;
         }
@@ -134,7 +133,7 @@ public class ReactionGameManager : MonoBehaviour
             // scorer.PlayOneShot(scorer.clip);
             UpdateScoreText(); 
 
-            activeButton.gameObject.SetActive(false); // Hide the button
+            activeButton.gameObject.SetActive(false);
 
             // Set the next random active button
             SetRandomActiveButton();
