@@ -44,7 +44,7 @@ public class HardReactionGameManager : MonoBehaviour
             b.gameObject.SetActive(false);
 
         startButton.gameObject.SetActive(true);
-        backButton.gameObject.SetActive(false);
+        backButton.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(false);
 
         // 2) Init UI
@@ -207,7 +207,9 @@ public class HardReactionGameManager : MonoBehaviour
         gameOverText.text = $"GAME OVER\nScore: {score}";
         gameOverText.gameObject.SetActive(true);
 
+
         // reveal Back button
+        startButton.gameObject.SetActive(true);
         backButton.gameObject.SetActive(true);
 
         // persist

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/RealMenu.unity
     guid: 13029ef4913eb58419d202e411552872
   - enabled: 1
-    path: Assets/Scenes/Game1.unity
+    path: Assets/Scenes/GameEasy.unity
     guid: 416fd09ed780a47e5879c784323f51d2
   - enabled: 1
     path: Assets/Scenes/GameMedium.unity

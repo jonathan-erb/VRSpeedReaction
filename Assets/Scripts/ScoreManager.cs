@@ -67,4 +67,10 @@ public static class ScoreManager
             Debug.LogError($"[ScoreManager] Failed to save high scores: {ex}");
         }
     }
+
+    public static void ClearAll()
+    {
+        PlayerPrefs.DeleteKey(HighScoresKey);
+        PlayerPrefs.Save();
+    }
 }
