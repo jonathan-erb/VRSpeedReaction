@@ -39,7 +39,7 @@ public class MediumReactionGameManager : MonoBehaviour
             b.gameObject.SetActive(false);
 
         // 2) Hide the Game Over text and Back button
-        gameOverText.gameObject.SetActive(false);
+        // gameOverText.gameObject.SetActive(false);
         backButton.gameObject.SetActive(true);
 
         // 3) Show only the Start button
@@ -179,7 +179,7 @@ public class MediumReactionGameManager : MonoBehaviour
         //gameOverText.gameObject.SetActive(true);
         ScoreManager.SaveScore(score);
         startButton.gameObject.SetActive(true);
-        //backButton.gameObject.SetActive(true);
+        backButton.gameObject.SetActive(true);
 
         foreach (var b in new List<PokeInteractable>(activeButtons))
             DespawnButton(b, scored: false);
